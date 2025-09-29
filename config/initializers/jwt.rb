@@ -1,0 +1,3 @@
+# config/initializers/jwt.rb
+JWT_SECRET = ENV['JWT_SECRET'] || 'YOUR_SECRET_KEY_CHANGE_ME'
+JWT_EXPIRY_HOURS = 24
