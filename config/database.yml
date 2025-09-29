@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV['DB_USERNAME'] || 'postgres' %>
+  password: <%= ENV['DB_PASSWORD'] || '' %>
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  pool: 5
+
+development:
+  <<: *default
+  database: expense_tracker_dev
+
+test:
+  <<: *default
+  database: expense_tracker_test
+
+production:
+  <<: *default
+  database: expense_tracker_prod
